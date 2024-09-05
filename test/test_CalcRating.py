@@ -3,7 +3,8 @@ from src.Types import DataType
 from src.CalcRating import CalcRating
 import pytest
 
-RatingsType = dict[str,float]
+RatingsType = dict[str, float]
+
 
 class TestCalcRating:
     @pytest.fixture()
@@ -17,10 +18,10 @@ class TestCalcRating:
                 ],
             "Петров Игорь Владимирович":
                 [
-                ("математика", 61),
-                ("русский язык", 80),
-                ("программирование", 78),
-                ("литература", 97)
+                    ("математика", 61),
+                    ("русский язык", 80),
+                    ("программирование", 78),
+                    ("литература", 97)
                 ]
         }
         rating_scores: RatingsType = {
@@ -37,4 +38,5 @@ class TestCalcRating:
         rating = CalcRating(input_data[0]).calc()
         for student in rating.keys():
             rating_score = rating[student]
-            assert pytest.approx(rating_score, abs=0.001) == input_data[1][student]
+            assert pytest.approx(
+                rating_score, abs=0.001) == input_data[1][student]
