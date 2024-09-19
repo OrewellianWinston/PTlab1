@@ -1,3 +1,3 @@
 # PTlab1
 Лабороторная работа №1 по дисциплине "Технологии программирования"
-(sequenceDiagram.png)
+![UML-Диаграмма](sequenceDiagram.png)
