@@ -1,6 +1,6 @@
-from DataReader import DataReader
+from .DataReader import DataReader
 import json
-from Types import DataType
+from .Types import DataType
 
 
 class JSONReader(DataReader):
@@ -9,5 +9,6 @@ class JSONReader(DataReader):
             data = json.load(file)
         students = {}
         for student, subject in data.items():
-            students[student] = [(subject, int(score)) for subject, score in subject.items()]
+            students[student] = [(subject, int(score))
+                                 for subject, score in subject.items()]
         return students
