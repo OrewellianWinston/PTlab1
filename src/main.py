@@ -2,9 +2,9 @@
 import argparse
 import sys
 
-from CalcRating import CalcRating
-#from TextDataReader import TextDataReader
-from JSONDataReader import JSONReader
+# from TextDataReader import TextDataReader
+from .JSONDataReader import JSONReader
+from .QuartilleCalc import QuartilleCalc
 
 
 def get_path_from_arguments(args) -> str:
@@ -20,8 +20,10 @@ def main():
     reader = JSONReader()
     students = reader.read(path)
     print("Students: ", students)
-    rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    quartille_calc = QuartilleCalc(students)
+    last_quartile_students = quartille_calc.compare()
+
+    print("Rating: ", last_quartile_students)
 
 
 if __name__ == "__main__":

@@ -34,7 +34,9 @@ class TestJSONReader:
         }
         return json_data, data
 
-    def test_read(self, tmpdir, json_file_content: tuple[dict[str, dict[str, int]], DataType]) -> None:
+    def test_read(self, tmpdir,
+                  json_file_content:
+                  tuple[dict[str, dict[str, int]], DataType]):
         json_data, expected_data = json_file_content
 
         json_file = tmpdir.join("students.json")
